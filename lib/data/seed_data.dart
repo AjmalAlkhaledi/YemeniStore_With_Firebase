@@ -1,0 +1,88 @@
+const List<Map<String, dynamic>> seedProductsData = [
+  {
+    'title': 'سماعة بلوتوث لاسلكية',
+    'price': 79.0,
+    'description':
+        'سماعة بلوتوث عالية الجودة بعزل للضوضاء وبطارية تدوم حتى 30 ساعة.',
+    'category': 'إلكترونيات',
+    'image': 'https://picsum.photos/seed/headphone/500/500',
+  },
+  {
+    'title': 'ساعة ذكية',
+    'price': 149.0,
+    'description':
+        'ساعة ذكية تدعم متابعة معدل ضربات القلب وعدد الخطوات والإشعارات.',
+    'category': 'إلكترونيات',
+    'image': 'https://picsum.photos/seed/smartwatch/500/500',
+  },
+  {
+    'title': 'لوحة مفاتيح ميكانيكية',
+    'price': 120.0,
+    'description': 'لوحة مفاتيح ميكانيكية بإضاءة RGB واستجابة سريعة.',
+    'category': 'إلكترونيات',
+    'image': 'https://picsum.photos/seed/keyboard/500/500',
+  },
+  {
+    'title': 'قميص قطني رجالي',
+    'price': 35.0,
+    'description': 'قميص رجالي من القطن الخالص مريح وأنيق.',
+    'category': 'ملابس',
+    'image': 'https://picsum.photos/seed/shirt/500/500',
+  },
+  {
+    'title': 'جاكيت شتوي',
+    'price': 95.0,
+    'description': 'جاكيت شتوي دافئ مقاوم للماء بتصميم عصري.',
+    'category': 'ملابس',
+    'image': 'https://picsum.photos/seed/jacket/500/500',
+  },
+  {
+    'title': 'حذاء رياضي',
+    'price': 60.0,
+    'description': 'حذاء رياضي خفيف الوزن مريح للجري والمشي.',
+    'category': 'ملابس',
+    'image': 'https://picsum.photos/seed/shoes/500/500',
+  },
+  {
+    'title': 'فن اللامبالاة',
+    'price': 25.0,
+    'description': 'كتاب في تطوير الذات يساعدك على التركيز على ما يهم فعلاً.',
+    'category': 'كتب',
+    'image': 'https://picsum.photos/seed/book1/500/500',
+  },
+  {
+    'title': 'العادات الذرية',
+    'price': 30.0,
+    'description': 'دليل عملي لبناء العادات الجيدة والتخلص من العادات السيئة.',
+    'category': 'كتب',
+    'image': 'https://picsum.photos/seed/book2/500/500',
+  },
+  {
+    'title': 'عطر شرقي فاخر',
+    'price': 110.0,
+    'description': 'عطر شرقي ثابت برائحة العود والمسك يدوم طويلاً.',
+    'category': 'عطور',
+    'image': 'https://picsum.photos/seed/perfume1/500/500',
+  },
+  {
+    'title': 'عطر منعش للرجال',
+    'price': 85.0,
+    'description': 'عطر رجالي منعش بمزيج من الحمضيات والأخشاب.',
+    'category': 'عطور',
+    'image': 'https://picsum.photos/seed/perfume2/500/500',
+  },
+  {
+    'title': 'طقم أواني طهي',
+    'price': 140.0,
+    'description': 'طقم أواني طهي من الستانلس ستيل مكوّن من 7 قطع.',
+    'category': 'مستلزمات المطبخ',
+    'image': 'https://picsum.photos/seed/pots/500/500',
+  },
+  {
+    'title': 'خلاط كهربائي',
+    'price': 70.0,
+    'description': 'خلاط كهربائي بقوة عالية وشفرات من الستانلس ستيل.',
+    'category': 'مستلزمات المطبخ',
+    'image': 'https://picsum.photos/seed/blender/500/500',
+  },
+];
