@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import '../models/product.dart';
+import '../models/cart_item.dart';
 import '../data/seed_data.dart';
 
 class FirestoreService {
@@ -45,5 +46,46 @@ class FirestoreService {
 
   Future<void> removeFavorite(String uid, String productId) {
     return _favorites(uid).doc(productId).delete();
+  }
+
+  CollectionReference<Map<String, dynamic>> _cart(String uid) =>
+      _db.collection('users').doc(uid).collection('cart');
+
+  Stream<List<CartItem>> cartStream(String uid) {
+    return _cart(uid).snapshots().map(
+      (snapshot) => snapshot.docs.map((doc) {
+        final data = doc.data();
+        return CartItem(
+          product: Product.fromMap(doc.id, data),
+          quantity: (data['quantity'] as num?)?.toInt() ?? 1,
+        );
+      }).toList(),
+    );
+  }
+
+  Future<void> addToCart(String uid, Product product) {
+    return _cart(uid).doc(product.id).set({
+      ...product.toMap(),
+      'quantity': FieldValue.increment(1),
+    }, SetOptions(merge: true));
+  }
+
+  Future<void> updateQuantity(String uid, String productId, int delta) {
+    return _cart(uid).doc(productId).update({
+      'quantity': FieldValue.increment(delta),
+    });
+  }
+
+  Future<void> removeFromCart(String uid, String productId) {
+    return _cart(uid).doc(productId).delete();
+  }
+
+  Future<void> clearCart(String uid) async {
+    final snapshot = await _cart(uid).get();
+    final batch = _db.batch();
+    for (final doc in snapshot.docs) {
+      batch.delete(doc.reference);
+    }
+    await batch.commit();
   }
 }

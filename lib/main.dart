@@ -28,8 +28,10 @@ class YemeniStoreApp extends StatelessWidget {
         Provider(create: (_) => AuthService()),
         Provider(create: (_) => firestore),
         ChangeNotifierProvider(create: (_) => ProductsProvider(firestore)),
-        ChangeNotifierProvider(create: (_) => FavoritesProvider(firestore)),
-        ChangeNotifierProvider(create: (_) => CartProvider()),
+        ChangeNotifierProvider(
+            lazy: false, create: (_) => FavoritesProvider(firestore)),
+        ChangeNotifierProvider(
+            lazy: false, create: (_) => CartProvider(firestore)),
       ],
       child: MaterialApp(
         title: 'متجر اليمن',
